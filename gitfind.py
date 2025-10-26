@@ -14,14 +14,14 @@ def get_user_data(username: str):
     return None
 
 def main():
-    print("GitFind STARTED")
+    print("GitFind Started!")
 
     if len(sys.argv) < 2:
         print("Usage: python gitfind.py <github_username>")
         sys.exit(1)
 
     username = sys.argv[1]
-    print(f"🔍 Looking up GitHub user: {username}\n")
+    print(f"Looking up GitHub user: {username}...\n")
 
     data = get_user_data(username)
     if not data:
@@ -32,8 +32,9 @@ def main():
     print(f"Public repos: {data['public_repos']}")
     print(f"Followers: {data['followers']}")
     print(f"Following: {data['following']}")
-    print(f"Profile: {data['html_url']}")
+    print(f"Profile Link: {data['html_url']}")
     print(f"Bio: {data.get('bio', 'N/A')}")
 
 if __name__ == "__main__":
     main()
+
